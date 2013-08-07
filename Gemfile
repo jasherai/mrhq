@@ -4,7 +4,7 @@ ruby '1.9.3'
 
 # rails 3.2
 #gem 'rails', '~> 3.2.3'
-gem 'rails', '3.2.12'
+gem 'rails', '~> 3.2.12'
 gem 'mysql2'
 # Use unicorn as the web server
 gem 'unicorn'
@@ -91,8 +91,6 @@ gem 'scoped_roles', git: 'git://github.com/jasherai/scoped_roles.git', branch: :
 #gem 'scoped_roles', :path => '/home/pmehta/workspace/git-sites.d/scoped_roles'
 gem "cancan", git: "git://github.com/ryanb/cancan.git", branch: "2.0"
 gem 'user_impersonate'
-gem 'rollout'
-gem 'rollout_ui'
 gem 'acts-as-taggable-on'
 gem 'awesome_nested_set'
 # Edge version but has features we need:
