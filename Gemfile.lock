@@ -103,7 +103,6 @@ GEM
       multi_json (~> 1.0)
     acts-as-taggable-on (2.4.1)
       rails (>= 3, < 5)
-    addressable (2.3.4)
     airbrake (3.1.12)
       activesupport
       builder
@@ -116,7 +115,6 @@ GEM
     atomic (1.1.12)
     awesome_nested_set (2.1.6)
       activerecord (>= 3.0.0)
-    awesome_print (1.0.2)
     aws-sdk (1.4.1)
       httparty (~> 0.7)
       json (~> 1.4)
@@ -133,30 +131,14 @@ GEM
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
-    brakeman (1.9.0)
-      activesupport
-      erubis (~> 2.6)
-      fastercsv (~> 1.5)
-      haml (~> 3.0)
-      highline (~> 1.6)
-      i18n
-      multi_json (~> 1.3)
-      ruby2ruby (~> 2.0)
-      ruby_parser (~> 3.0.4)
-      sass (~> 3.0)
-      terminal-table (~> 1.4)
     builder (3.0.4)
     bullet (4.6.0)
       uniform_notifier
-    capybara (2.1.0)
-      mime-types (>= 1.16)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (~> 2.0)
-    celluloid (0.12.4)
-      facter (>= 1.6.12)
-      timers (>= 1.0.0)
+    cache_digests (0.3.0)
+      actionpack (>= 3.2)
+      thread_safe
+    celluloid (0.15.2)
+      timers (~> 1.1.0)
     chronic (0.6.7)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -175,19 +157,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.1)
-    colored (1.2)
-    connection_pool (1.0.0)
-    cucumber (1.3.1)
-      builder (>= 2.1.2)
-      diff-lcs (>= 1.1.3)
-      gherkin (~> 2.12.0)
-      multi_json (~> 1.3)
-    cucumber-rails (1.3.1)
-      capybara (>= 1.1.2)
-      cucumber (>= 1.2.0)
-      nokogiri (>= 1.5.0)
-      rails (~> 3.0)
-    database_cleaner (0.7.2)
+    connection_pool (1.1.0)
     date_validator (0.6.3)
       activemodel (~> 3.0)
     debug_inspector (0.0.2)
@@ -200,26 +170,13 @@ GEM
     devise_invitable (1.0.1)
       devise (>= 2.0.0)
       rails (~> 3.0)
-    diff-lcs (1.1.3)
     dotenv (0.8.0)
-    em-websocket (0.3.6)
-      addressable (>= 2.1.1)
-      eventmachine (>= 0.12.9)
     erubis (2.7.0)
-    eventmachine (0.12.10)
     excon (0.6.6)
     execjs (1.3.0)
       multi_json (~> 1.0)
-    facter (1.6.18)
-    factory_girl (4.2.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.2.1)
-      factory_girl (~> 4.2.0)
-      railties (>= 3.0.0)
     faraday (0.8.8)
       multipart-post (~> 1.2.0)
-    fastercsv (1.5.5)
-    ffi (1.8.1)
     fog (0.9.0)
       builder
       excon (~> 0.6.1)
@@ -234,45 +191,8 @@ GEM
       dotenv (>= 0.7)
       thor (>= 0.13.6)
     formatador (0.2.4)
-    gherkin (2.12.0)
-      multi_json (~> 1.3)
-    guard (1.6.1)
-      listen (>= 0.6.0)
-      lumberjack (>= 1.0.2)
-      pry (>= 0.9.10)
-      thor (>= 0.14.6)
-    guard-annotate (0.9.4)
-      annotate (>= 2.4.0)
-      guard (>= 0.2.2)
-    guard-brakeman (0.6.2)
-      brakeman (>= 1.8.2)
-      guard (>= 1.1.0)
-    guard-bundler (0.1.3)
-      bundler (>= 1.0.0)
-      guard (>= 0.2.2)
-    guard-cucumber (0.7.5)
-      cucumber (>= 0.10)
-      guard (>= 0.8.3)
-    guard-livereload (0.4.2)
-      em-websocket (>= 0.2.0)
-      guard (>= 0.10.0)
-      multi_json (~> 1.0)
-    guard-migrate (0.1.0)
-      guard (>= 0.2.2)
-    guard-rails_best_practices (0.1.3)
-      activesupport
-      guard (>= 0.9)
-      rails_best_practices (>= 1.1.0)
-    guard-rspec (0.7.0)
-      guard (>= 0.10.0)
     haml (3.1.7)
-    haml-rails (0.3.4)
-      actionpack (~> 3.0)
-      activesupport (~> 3.0)
-      haml (~> 3.0)
-      railties (~> 3.0)
     hashr (0.0.22)
-    highline (1.6.15)
     hike (1.2.3)
     httparty (0.8.2)
       multi_json
@@ -299,14 +219,10 @@ GEM
       activesupport (>= 3.0.0)
       railties (>= 3.0.0)
     kgio (2.8.0)
-    libnotify (0.8.0)
-      ffi (>= 1.0.11)
     libv8 (3.3.10.4)
-    listen (0.7.1)
     lograge (0.2.0)
       actionpack
       activesupport
-    lumberjack (1.0.2)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -316,7 +232,6 @@ GEM
     meta_request (0.2.1)
       rack-contrib
       rails
-    method_source (0.8.1)
     mime-types (1.24)
     mini_exiftool (2.3.0)
     mini_portile (0.5.0)
@@ -371,14 +286,6 @@ GEM
       rack
     polyglot (0.3.3)
     posix-spawn (0.3.6)
-    progressbar (0.11.0)
-    pry (0.9.10)
-      coderay (~> 1.0.5)
-      method_source (~> 0.8)
-      slop (~> 3.3.1)
-    pry-doc (0.4.6)
-      pry (>= 0.9)
-      yard (>= 0.8)
     pygments.rb (0.5.2)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
@@ -407,14 +314,6 @@ GEM
       railties (= 3.2.14)
     rails3-jquery-autocomplete (1.0.7)
       rails (~> 3.0)
-    rails_best_practices (1.9.1)
-      activesupport
-      awesome_print
-      colored
-      erubis
-      i18n
-      progressbar
-      sexp_processor
     rails_config (0.3.0)
       activesupport (>= 3.0)
     railties (3.2.14)
@@ -431,7 +330,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     recaptcha (0.3.5)
-    redis (3.0.4)
+    redis (3.0.5)
     redis-actionpack (3.2.3)
       actionpack (~> 3.2.3)
       redis-rack (~> 1.4.0)
@@ -439,7 +338,7 @@ GEM
     redis-activesupport (3.2.3)
       activesupport (~> 3.2.3)
       redis-store (~> 1.1.0)
-    redis-namespace (1.3.0)
+    redis-namespace (1.3.1)
       redis (~> 3.0.0)
     redis-rack (1.4.2)
       rack (~> 1.4.1)
@@ -453,38 +352,19 @@ GEM
     request-log-analyzer (1.12.9)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rspec (2.9.0)
-      rspec-core (~> 2.9.0)
-      rspec-expectations (~> 2.9.0)
-      rspec-mocks (~> 2.9.0)
-    rspec-core (2.9.0)
-    rspec-expectations (2.9.1)
-      diff-lcs (~> 1.1.3)
-    rspec-mocks (2.9.0)
-    rspec-rails (2.9.0)
-      actionpack (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec (~> 2.9.0)
     ruby-hmac (0.4.0)
     ruby-prof (0.13.0)
-    ruby2ruby (2.0.1)
-      ruby_parser (~> 3.0.0)
-      sexp_processor (~> 4.0)
-    ruby_parser (3.0.4)
-      sexp_processor (~> 4.1)
     sass (3.2.5)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    sexp_processor (4.1.3)
-    sidekiq (2.9.0)
-      celluloid (~> 0.12.0)
-      connection_pool (~> 1.0)
-      multi_json (~> 1)
-      redis (~> 3)
-      redis-namespace
+    sidekiq (2.15.1)
+      celluloid (>= 0.15.1)
+      connection_pool (>= 1.0.0)
+      json
+      redis (>= 3.0.4)
+      redis-namespace (>= 1.3.1)
     sinatra (1.3.6)
       rack (~> 1.4)
       rack-protection (~> 1.3)
@@ -492,7 +372,6 @@ GEM
     slim (1.3.8)
       temple (~> 0.6.3)
       tilt (~> 1.3.3)
-    slop (3.3.3)
     sort_alphabetical (0.1.3)
       activesupport
     sprockets (2.2.2)
@@ -505,12 +384,13 @@ GEM
       faraday (~> 0.8.0)
       multi_json (~> 1.7.2)
     temple (0.6.3)
-    terminal-table (1.4.5)
     the_sortable_tree (1.8.5)
       rails (>= 3.1)
     therubyracer (0.10.1)
       libv8 (~> 3.3.10)
     thor (0.18.1)
+    thread_safe (0.1.0)
+      atomic
     tilt (1.3.7)
     timers (1.1.0)
     tire (0.6.0)
@@ -545,8 +425,6 @@ GEM
     warden (1.1.1)
       rack (>= 1.0)
     xml-simple (1.1.2)
-    xpath (2.0.0)
-      nokogiri (~> 1.3)
     yajl-ruby (1.1.0)
     yard (0.8.7)
 
@@ -565,37 +443,23 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bullet
+  cache_digests
   cancan!
-  capybara
   chronic
   clockwork
   coffee-filter
   coffee-rails (~> 3.2.1)
-  cucumber-rails
-  database_cleaner
   date_validator
   devise
   devise_invitable
-  factory_girl_rails (~> 4.0)
   foreman
-  guard
-  guard-annotate
-  guard-brakeman
-  guard-bundler
-  guard-cucumber
-  guard-livereload
-  guard-migrate
-  guard-rails_best_practices
-  guard-rspec
   haml
-  haml-rails (>= 0.3.4)
   i18n-country-translations
   i18n_country_select
   ie_iframe_cookies
   jquery-rails
   jquery-ui-rails
   kaminari
-  libnotify
   lograge
   make_flaggable!
   marginalia
@@ -619,21 +483,16 @@ DEPENDENCIES
   peek-sidekiq
   pilfer
   pinglish
-  pry
-  pry-doc
   pygments.rb
   rack-mini-profiler
   railroady
   rails (~> 3.2.12)
   rails3-jquery-autocomplete
-  rails_best_practices
   rails_config
   recaptcha
   redis-rails
   redis-store
   request-log-analyzer
-  rspec-core (~> 2.9)
-  rspec-rails
   ruby-prof
   sass-rails (~> 3.2.3)
   scoped_roles!

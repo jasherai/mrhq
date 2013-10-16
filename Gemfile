@@ -23,17 +23,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'jquery-ui-rails'
-  # Use zurb foundation css framework for responsive design and mobile viewing support
-  # TODO: Use our version to allow support for jquery-rails 2.0.0 until gemspec is updated.
   gem 'asset_sync'
   gem 'turbo-sprockets-rails3', '~> 0.3.0'
-end
-
-group :test do
-  gem 'cucumber-rails'
-  gem 'guard-cucumber'
-  gem 'capybara'
-  gem 'database_cleaner'
 end
 
 group :development, :local_production do
@@ -47,31 +38,8 @@ group :development, :local_production do
 end
 
 group :development, :local_production, :test do
-  gem 'haml-rails', '>= 0.3.4'
-
-  # Add guard and notification deps
-  gem 'guard'
-  gem 'libnotify'
   gem 'annotate', git: 'git://github.com/ctran/annotate_models.git', require: false
-  # add gaurd libraries
-  gem 'guard-rspec'
-  gem 'guard-livereload'
-  gem 'guard-annotate'
-  gem 'rails_best_practices'
-  gem 'guard-rails_best_practices'
-  gem 'guard-bundler'
-  gem 'guard-chef'
-  gem 'guard-migrate'
-  gem 'guard-pusher'
-  gem 'guard-brakeman'
-  # For model documentation
   gem 'railroady'
-
-  # Testing Gems
-  gem 'rspec-core', '~> 2.9'
-  gem 'rspec-rails'
-  gem 'database_cleaner', group: :test
-  gem 'factory_girl_rails', "~> 4.0", group: :test
 end
 
 
@@ -79,6 +47,7 @@ end
 
 gem 'haml'
 gem 'coffee-filter'
+gem 'cache_digests'
 group :local_production, :production, :assets do
   #gem 'themes_for_rails', '~> 0.5.0'
   gem 'themes_for_rails', git: 'git://github.com/jasherai/themes_for_rails.git', branch: 'master'
@@ -132,7 +101,7 @@ group :production do
 end
 gem 'rack-mini-profiler'
 gem 'peek', github: 'phatforge/peek'
-gem 'peek-user_impersonate', github: 'phatforge/peek-user_impersonate'
+#gem 'peek-user_impersonate', github: 'phatforge/peek-user_impersonate'
 gem 'peek-env_vars'
 gem 'peek-gc'
 gem 'peek-active_record'
