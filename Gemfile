@@ -27,6 +27,10 @@ group :assets do
   gem 'turbo-sprockets-rails3', '~> 0.3.0'
 end
 
+group :development do
+  gem 'haml-rails'
+end
+
 group :development, :local_production do
   gem 'yard'
   gem 'foreman'
@@ -37,11 +41,21 @@ group :development, :local_production do
   gem 'request-log-analyzer'
 end
 
+group :test do
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
+  gem 'ci_reporter'
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov', :require => false
+  gem 'simplecov-rcov-text', :require => false
+  gem 'simplecov-json', :require => false
+  gem 'metric_fu'
+end
+
 group :development, :local_production, :test do
   gem 'annotate', git: 'git://github.com/ctran/annotate_models.git', require: false
   gem 'railroady'
 end
-
 
 # Global Gems -------------------------------------------------------
 
@@ -116,6 +130,9 @@ gem 'pygments.rb', :require => false
 gem 'peek-rblineprof', github: 'phatforge/peek-rblineprof', branch: 'persistence'
 gem 'peek-query_reviewer', github: 'peek/peek-query_reviewer'
 
+gem 'redcarpet'
+gem 'simplecov-html', require: false
+
 # Profiling gems
 group :profiling do
   gem 'active-profiling'
@@ -123,6 +140,7 @@ group :profiling do
   gem 'pilfer'
 end
 
+gem 'bcurren-freshbooks.rb', require: 'freshbooks', git: 'git://github.com/bcurren/freshbooks.rb'
 # Error reporting
 gem 'airbrake' #, github: 'airbrake/airbrake'
 gem 'pinglish'
