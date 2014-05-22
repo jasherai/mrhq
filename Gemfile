@@ -1,10 +1,12 @@
+# -*- encoding : utf-8 -*-
 source 'https://rubygems.org'
 
 ruby '1.9.3'
 
 # rails 3.2
-#gem 'rails', '~> 3.2.3'
 gem 'rails', '~> 3.2.12'
+gem 'dotenv-rails', :groups => [:development, :test]
+gem 'pry-rails'
 gem 'mysql2'
 # Use unicorn as the web server
 gem 'unicorn'
@@ -32,6 +34,7 @@ group :development do
 end
 
 group :development, :local_production do
+  gem 'pry-plus'
   gem 'yard'
   gem 'foreman'
   gem 'bullet'
@@ -50,6 +53,17 @@ group :test do
   gem 'simplecov-rcov-text', :require => false
   gem 'simplecov-json', :require => false
   gem 'metric_fu'
+  gem 'sandi_meter'
+  gem 'guard'
+  gem 'guard-minitest'
+  gem 'guard-brakeman'
+  gem 'guard-annotate'
+  gem 'guard-bundler'
+  gem 'guard-migrate'
+  gem 'terminal-notifier'
+  gem 'terminal-notifier-guard'
+  gem 'rr', require: false
+  gem 'ruby-prof'
 end
 
 group :development, :local_production, :test do
@@ -75,11 +89,11 @@ gem 'scoped_roles', git: 'git://github.com/jasherai/scoped_roles.git', branch: :
 gem "cancan", git: "git://github.com/ryanb/cancan.git", branch: "2.0"
 gem 'user_impersonate'
 gem 'acts-as-taggable-on'
-gem 'awesome_nested_set'
+gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set', branch: '2-1-stable'
 # Edge version but has features we need:
 gem 'the_sortable_tree', '>= 1.8.5'
 gem 'state_machine'
-gem 'mini_exiftool', '>= 2.3.0'
+gem 'exiv2', git: 'https://github.com/jgraichen/exiv2.git', branch: 'types'
 gem 'date_validator'
 
 # Sidekiq and deps
@@ -101,8 +115,7 @@ gem 'rails_config'
 gem 'rails3-jquery-autocomplete'
 gem 'chronic'
 gem "recaptcha", :require => "recaptcha/rails"
-gem 'i18n-country-translations'
-gem 'i18n_country_select'
+gem 'country_select'
 
 # Logging Gems --------------------------------------------------------
 gem 'marginalia' #, github: 'carnival/marginalia'
@@ -111,10 +124,11 @@ gem 'lograge'
 # Instrumentation Gems
 group :production do
   gem 'newrelic_rpm'
-  gem 'newrelic-redis'
+  #gem 'newrelic-redis'
 end
 gem 'rack-mini-profiler'
 gem 'peek', github: 'phatforge/peek'
+gem 'skylight'
 #gem 'peek-user_impersonate', github: 'phatforge/peek-user_impersonate'
 gem 'peek-env_vars'
 gem 'peek-gc'
@@ -136,11 +150,10 @@ gem 'simplecov-html', require: false
 # Profiling gems
 group :profiling do
   gem 'active-profiling'
-  gem 'ruby-prof'
   gem 'pilfer'
 end
 
-gem 'bcurren-freshbooks.rb', require: 'freshbooks', git: 'git://github.com/bcurren/freshbooks.rb'
+gem 'freshbooks.rb', require: 'freshbooks', github: 'bcurren/freshbooks.rb'
 # Error reporting
 gem 'airbrake' #, github: 'airbrake/airbrake'
 gem 'pinglish'
