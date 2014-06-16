@@ -5,6 +5,7 @@ ruby '1.9.3'
 
 # rails 3.2
 gem 'rails', '~> 3.2.12'
+gem 'dotenv'
 gem 'dotenv-rails', :groups => [:development, :test]
 gem 'pry-rails'
 gem 'mysql2'
@@ -93,7 +94,7 @@ gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set', branch: '
 # Edge version but has features we need:
 gem 'the_sortable_tree', '>= 1.8.5'
 gem 'state_machine'
-gem 'exiv2', git: 'https://github.com/jgraichen/exiv2.git', branch: 'types'
+gem 'exiv2', git: 'https://github.com/thinlayer/exiv2.git', branch: 'safer_time_object_creation'
 gem 'date_validator'
 
 # Sidekiq and deps
@@ -101,6 +102,7 @@ gem 'sinatra', require: nil
 gem 'slim'
 gem 'sidekiq'
 gem 'clockwork'
+gem 'sidekiq-unique-jobs'
 
 gem 'transloadit'
 gem 'aws-sdk'
