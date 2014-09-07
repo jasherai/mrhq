@@ -61,6 +61,8 @@ group :test do
   gem 'guard-annotate'
   gem 'guard-bundler'
   gem 'guard-migrate'
+  gem 'rubocop', require: false
+  gem 'guard-rubocop'
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'
   gem 'rr', require: false
@@ -157,7 +159,7 @@ end
 
 gem 'freshbooks.rb', require: 'freshbooks', github: 'bcurren/freshbooks.rb'
 # Error reporting
-gem 'airbrake' #, github: 'airbrake/airbrake'
+gem 'airbrake', '~>3.1' #, github: 'airbrake/airbrake'
 gem 'pinglish'
 
 # Redis Cache/Store etc
@@ -167,3 +169,6 @@ gem 'redis-rails'
 
 # We really should remove the rquirement for this:
 gem 'ie_iframe_cookies'
+
+# Voting mechanism
+gem 'acts_as_votable', '~> 0.10.0'
