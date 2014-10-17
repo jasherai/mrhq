@@ -26,6 +26,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'jquery-ui-rails'
+  gem 'fog', '~>1.20', require: 'fog/aws/storage'
   gem 'asset_sync'
   gem 'turbo-sprockets-rails3', '~> 0.3.0'
 end
@@ -67,6 +68,7 @@ group :test do
   gem 'terminal-notifier-guard'
   gem 'rr', require: false
   gem 'ruby-prof'
+  gem 'minitest-perf'
 end
 
 group :development, :local_production, :test do
@@ -123,6 +125,7 @@ gem 'country_select'
 
 # Logging Gems --------------------------------------------------------
 gem 'marginalia' #, github: 'carnival/marginalia'
+gem 'logstash-event'
 gem 'lograge'
 
 # Instrumentation Gems
