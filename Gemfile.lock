@@ -659,7 +659,7 @@ GEM
       atomic (>= 1.1.7, < 2)
     tilt (1.4.1)
     timers (1.1.0)
-    tire (0.6.0)
+    tire (0.6.2)
       activemodel (>= 3.0)
       activesupport
       ansi
