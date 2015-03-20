@@ -1,12 +1,12 @@
 # -*- encoding : utf-8 -*-
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.0.0'
 
 # rails 3.2
-gem 'rails', '~> 3.2.12'
-gem 'dotenv'
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'rails', '=3.2.21'
+gem 'dotenv-deployment'
+gem 'dotenv-rails' #, :groups => [:development, :test]
 gem 'pry-rails'
 gem 'mysql2'
 # Use unicorn as the web server
@@ -26,9 +26,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'jquery-ui-rails'
-  gem 'fog', '~>1.20', require: 'fog/aws/storage'
-  gem 'asset_sync'
-  gem 'turbo-sprockets-rails3', '~> 0.3.0'
 end
 
 group :development do
@@ -36,42 +33,42 @@ group :development do
 end
 
 group :development, :local_production do
-  gem 'pry-plus'
-  gem 'yard'
-  gem 'foreman'
-  gem 'bullet'
-  gem 'meta_request'
-  gem "binding_of_caller"
-  gem 'better_errors'
-  gem 'request-log-analyzer'
-end
-
-group :test do
-  gem 'minitest-rails'
-  gem 'minitest-rails-capybara'
-  gem 'ci_reporter'
-  gem 'simplecov', require: false
-  gem 'simplecov-rcov', :require => false
-  gem 'simplecov-rcov-text', :require => false
-  gem 'simplecov-json', :require => false
-  gem 'metric_fu'
-  gem 'sandi_meter'
   gem 'guard'
   gem 'guard-minitest'
   gem 'guard-brakeman'
   gem 'guard-annotate'
   gem 'guard-bundler'
-  gem 'guard-migrate'
   gem 'rubocop', require: false
   gem 'guard-rubocop'
   gem 'terminal-notifier'
   gem 'terminal-notifier-guard'
+  gem 'yard'
+  gem 'foreman'
+  gem 'meta_request'
+  gem "binding_of_caller"
+  gem 'better_errors'
+  gem 'request-log-analyzer'
+  gem 'mailcatcher'
+end
+
+group :test do
+  gem 'minitest-rails'
+  gem 'minitest-rails-capybara'
+  gem 'ci_reporter', '~> 1.9'
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov', :require => false
+  gem 'simplecov-rcov-text', :require => false
+  gem 'simplecov-json', :require => false
+  gem 'simplecov-html', require: false
+  gem 'metric_fu'
+  gem 'sandi_meter'
   gem 'rr', require: false
   gem 'ruby-prof'
   gem 'minitest-perf'
+  gem 'database_cleaner'
 end
 
-group :development, :local_production, :test do
+group :development, :test do
   gem 'annotate', git: 'git://github.com/ctran/annotate_models.git', require: false
   gem 'railroady'
 end
@@ -79,15 +76,18 @@ end
 # Global Gems -------------------------------------------------------
 
 gem 'haml'
-gem 'coffee-filter'
 gem 'cache_digests'
+gem 'fog', '~>1.20', require: 'fog/aws/storage'
+gem 'asset_sync'
+gem 'turbo-sprockets-rails3', '~> 0.3.0'
+
 group :local_production, :production, :assets do
   #gem 'themes_for_rails', '~> 0.5.0'
   gem 'themes_for_rails', git: 'git://github.com/jasherai/themes_for_rails.git', branch: 'master'
   #gem 'themes_for_rails', :path => '/home/pmehta/workspace/git-sync.d/themes_for_rails'
 end
 gem 'jquery-rails'
-gem 'devise'
+gem 'devise', '~> 2.2.0'
 gem 'devise_invitable'
 gem 'scoped_roles', git: 'git://github.com/jasherai/scoped_roles.git', branch: :master
 #gem 'scoped_roles', :path => '/home/pmehta/workspace/git-sites.d/scoped_roles'
@@ -96,7 +96,7 @@ gem 'user_impersonate'
 gem 'acts-as-taggable-on'
 gem 'awesome_nested_set', github: 'collectiveidea/awesome_nested_set', branch: '2-1-stable'
 # Edge version but has features we need:
-gem 'the_sortable_tree', '>= 1.8.5'
+gem 'the_sortable_tree', github: 'the-teacher/the_sortable_tree', branch: 'rails_3'
 gem 'state_machine'
 gem 'exiv2', git: 'https://github.com/thinlayer/exiv2.git', branch: 'safer_time_object_creation'
 gem 'date_validator'
@@ -148,16 +148,15 @@ gem 'peek-performance_bar'
 gem 'peek-sidekiq'
 # pygments for peek-rblineprof syntax highlighting
 gem 'pygments.rb', :require => false
-gem 'peek-rblineprof', github: 'phatforge/peek-rblineprof', branch: 'persistence'
+# gem 'peek-rblineprof', github: 'phatforge/peek-rblineprof', branch: 'persistence'
 gem 'peek-query_reviewer', github: 'peek/peek-query_reviewer'
 
 gem 'redcarpet'
-gem 'simplecov-html', require: false
 
 # Profiling gems
 group :profiling do
   gem 'active-profiling'
-  gem 'pilfer'
+  # gem 'pilfer'
 end
 
 gem 'freshbooks.rb', require: 'freshbooks', github: 'bcurren/freshbooks.rb'
@@ -165,13 +164,10 @@ gem 'freshbooks.rb', require: 'freshbooks', github: 'bcurren/freshbooks.rb'
 gem 'airbrake', '~>3.1' #, github: 'airbrake/airbrake'
 gem 'pinglish'
 
+gem 'bullet', groups: [:development, :local_production]
 # Redis Cache/Store etc
 gem 'redis-store'
 gem 'redis-rails'
-
-
-# We really should remove the rquirement for this:
-gem 'ie_iframe_cookies'
 
 # Voting mechanism
 gem 'acts_as_votable', '~> 0.10.0'
